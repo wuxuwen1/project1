@@ -66,28 +66,28 @@
   <script>
     var input = document.querySelector('input');
     var obj = 'adggs'
-   function isObject(obj){
-     return typeof obj ==='object'&&obj!==null
-   }
-   
-   function clone(sourse){
-     if(!isObject(sourse)){
-      return sourse
-     }
-     var target=Array.isArray(sourse)?[]:{};
-     for (k in sourse){
-       if (sourse.hasOwnProperty(k)){
-         if (typeof sourse[k]==='object'){
-           traget[k]=clone(sourse[k])
-         }else {traget[k]=sourse[k]}
-       }
-     }
-     return traget
-   }
-var arr=[1,2,35,6];
-console.log(arr);
-console.log(arr.valueOf());
+    function isObject(obj) {
+      return typeof obj === 'object' && obj !== null
+    }
 
+    function clone(sourse) {
+      if (!isObject(sourse)) {
+        return sourse
+      }
+      var target = Array.isArray(sourse) ? [] : {};
+      for (k in sourse) {
+        if (sourse.hasOwnProperty(k)) {
+          if (typeof sourse[k] === 'object') {
+            traget[k] = clone(sourse[k])
+          } else { traget[k] = sourse[k] }
+        }
+      }
+      return traget
+    }
+    var arr = [1, 2, 35, 6];
+    console.log(arr);
+    console.log(arr.valueOf());
+    arr.push(100)
   </script>
 </body>
 
